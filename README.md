@@ -52,23 +52,29 @@ User Question → Thought → Action → Observation → Thought → Final Answe
                                     │
                                     ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                         TOOL LAYER                                  │
+│                         TOOL LAYER (12 Tools)                       │
 │                                                                     │
 │  ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐  │
-│  │ Academic RAG    │    │   Calculator    │    │  Emotion        │  │
-│  │ Search Tool     │    │     Tool        │    │  Analysis       │  │
+│  │ Academic RAG    │    │   Calculator    │    │  Buffer         │  │
+│  │ Search Tool     │    │     Tool        │    │  Management     │  │
 │  │                 │    │                 │    │                 │  │
 │  │ ┌─────────────┐ │    │ ┌─────────────┐ │    │ ┌─────────────┐ │  │
-│  │ │Query: "stress│ │    │ │ 440-444=4Hz │ │    │ │ User: SAD   │ │  │
-│  │ │management"   │ │    │ │ calculation │ │    │ │ Confidence: │ │  │
-│  │ └─────────────┘ │    │ └─────────────┘ │    │ │    78%      │ │  │
+│  │ │Query: "stress│ │    │ │ 440-444=4Hz │ │    │ │ 5-sec frames││  │
+│  │ │management"   │ │    │ │ calculation │ │    │ │ 60-sec buffer│  │
+│  │ └─────────────┘ │    │ └─────────────┘ │    │ │ analysis    │ │  │
 │  └─────────────────┘    └─────────────────┘    │ └─────────────┘ │  │
-│           │                       │            └─────────────────┘  │
-│           ▼                       ▼                       │         │
-│  ┌─────────────────┐    ┌─────────────────┐              ▼         │
-│  │ ChromaDB Vector │    │ Math Operations │    ┌─────────────────┐  │
-│  │ Similarity      │    │ Frequency Calc  │    │ Mock Emotion    │  │
-│  │ Search          │    │                 │    │ Data            │  │
+│                                                 └─────────────────┘ │
+│                                                                     │
+│  ┌─────────────────┐    ┌─────────────────┐                         │
+│  │ ChromaDB Vector │    │ AST-Safe Math   │    ┌─────────────────┐  │
+│  │ Similarity      │    │ Operations      │    │ Session         │  │
+│  │ Search          │    │                 │    │ Management      │  │
+│  └─────────────────┘    └─────────────────┘    └─────────────────┘  │
+│                                                          │          │
+│  ┌─────────────────┐    ┌─────────────────┐              ▼          │
+│  │ Contextual      │    │ User History    │    ┌─────────────────┐  │
+│  │ Research        │    │ & Patterns      │    │ Intervention    │  │
+│  │                 │    │                 │    │ Research        │  │
 │  └─────────────────┘    └─────────────────┘    └─────────────────┘  │
 └─────────────────────────────────────────────────────────────────────┘
                                     │
