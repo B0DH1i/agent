@@ -145,13 +145,6 @@ chunk_metadata = {
 - Unnecessary tool usage for simple greetings
 - Truncated responses due to token limits
 
-## Lessons Learned
-
-**Critical Importance of System Prompt Engineering**: The role of system prompts in controlling agent behavior was observed to be much more critical than expected.
-
-**Complexity of Tool Selection Logic**: Determining which tool the agent should use in which situation was found to be a much more complex problem than initially anticipated.
-
-**Strategic Importance of Token Management**: Token limits were experienced not just as a technical constraint, but as a critical factor directly affecting user experience.
 
 ## Summary
 
@@ -160,3 +153,4 @@ The DAWOS Agent project involves developing a comprehensive artificial intellige
 Testing with 7 different scenarios achieved a 71% partial success rate, but improvement needs were identified in system rule compliance, tool selection optimization, and token management areas. The project provided valuable experience in system prompt engineering, tool selection logic, and memory management in the AI agent development process.
 
 ---
+
