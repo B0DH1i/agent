@@ -344,34 +344,18 @@ The following 15 questions were specifically selected to represent edge cases, h
 - Response truncated (token limit)
 - Same rule violation
 
-### Successful Areas
-
-- **Hallucination Control**: The agent showed no clear hallucinations in any question
-- **System Stability**: Only 1 out of 15 questions experienced system crashes
-- **Partial Success Rate**: Achieved partial success in 10/15 questions
-
-### Areas Requiring Improvement
-
-- **Rule Compliance**: No question achieved full rule compliance
-- **Tool Usage**: Unnecessary tool usage observed in all questions
-- **Token Limit**: Response truncation issues in 4 questions
-
-### Recommendations
-
-- Strengthening rule-based behavior mechanisms
-- Optimizing tool selection algorithms
-- Improving token management and response length control
-- Enhancing error handling to increase system stability
-
-## Conclusion
-
-DAWOS Agent demonstrated moderate performance in benchmark tests. The main issue is that prompt quality needs improvement - when strict rules are defined, other scenarios get affected. While successful in hallucination control and basic functionality, significant prompt-based improvements are needed in rule compliance and tool selection.
 
 **Main Issues**:
 - System rules compliance not fully achieved
 - Unnecessary user checks for educational questions
 - Unnecessary tool usage for simple greetings
 - Truncated responses due to token limits
+
+
+## Conclusion of Benchmark
+
+DAWOS Agent demonstrated moderate performance in benchmark tests. The main issue is that prompt quality needs improvement - when strict rules are defined, other scenarios get affected. While successful in hallucination control and basic functionality, significant prompt-based improvements are needed in rule compliance and tool selection.
+
 
 
 ## Summary
@@ -381,6 +365,7 @@ The DAWOS Agent project involves developing a comprehensive artificial intellige
 Testing with 7 different scenarios achieved a 71% partial success rate, but improvement needs were identified in system rule compliance, tool selection optimization, and token management areas. The project provided valuable experience in system prompt engineering, tool selection logic, and memory management in the AI agent development process.
 
 ---
+
 
 
 
