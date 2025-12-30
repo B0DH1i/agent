@@ -265,8 +265,6 @@ chunk_metadata = {
 
 ## System Performance and Test Results
 
-## Benchmark Objective
-
 The primary objective of this benchmark is to evaluate DAWOS Agent's capabilities in the following areas:
 
 - Behaving as a rule-based agent rather than a text generator
@@ -383,6 +381,7 @@ The DAWOS Agent project involves developing a comprehensive artificial intellige
 Testing with 7 different scenarios achieved a 71% partial success rate, but improvement needs were identified in system rule compliance, tool selection optimization, and token management areas. The project provided valuable experience in system prompt engineering, tool selection logic, and memory management in the AI agent development process.
 
 ---
+
 
 
 
