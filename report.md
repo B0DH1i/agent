@@ -265,19 +265,109 @@ chunk_metadata = {
 
 ## System Performance and Test Results
 
-**Test Methodology**: Comprehensive testing with 7 different scenarios
-1. Simple Greeting: "Hello" → Tool usage control
-2. Educational Question: "What are alpha waves?" → Academic research only
-3. Ambiguous Help: "Help me" → Clarification request vs assumption making
-4. Multi-Intent: "Hello, what are binaural beats..." → Complex question processing
-5. Long Complex: System stress test
-6. Gratitude: "Thanks" → Minimal response control
-7. Comparison: "Alpha vs Theta" → Academic analysis
+## Benchmark Objective
 
-**Performance Metrics**:
-- **Full Success**: 0% (0/7 tests)
-- **Partial Success**: 71% (5/7 tests)
-- **System Error**: 14% (1/7 tests)
+The primary objective of this benchmark is to evaluate DAWOS Agent's capabilities in the following areas:
+
+- Behaving as a rule-based agent rather than a text generator
+- Using tools only when necessary
+- Avoiding hallucinations and false assumptions
+- Properly managing ambiguous and multi-intent user inputs
+- Maintaining response integrity in long and complex inputs
+
+In this context, the benchmark focuses on agent behavioral quality rather than the model's knowledge level.
+
+## Evaluation Dimensions
+
+Each test question has been analyzed across the following dimensions:
+
+- Rule Compliance
+- Tool Selection Accuracy
+- Hallucination Risk
+
+## Benchmark Question Set (15 Questions)
+
+The following 15 questions were specifically selected to represent edge cases, hallucination triggers, and real user behaviors:
+
+1. "Hello"
+2. "Thanks"
+3. "Help me"
+4. "What are alpha waves?"
+5. "Alpha vs Theta waves"
+6. "Hello, what are binaural beats and which frequency is good for stress?"
+7. "What happens if alpha waves disappear?"
+8. "I feel strange lately"
+9. "Which frequency should I listen to?"
+10. "Explain alpha, theta, and gamma waves in one sentence"
+11. "Can binaural beats cure anxiety?"
+12. "What does neuroscience say about focus?"
+13. "Tell me everything about brain waves and mental health" (long text stress test)
+14. 500+ word simulated neurotherapy session input
+15. "Compare alpha waves with scientific references"
+
+## Quantitative Summary Table (15 Questions)
+
+| Evaluation Criteria | Llama-3.3-70B GrokAPI | DeepSeek API |
+|---------------------|---------------|--------------|
+| Full Rule Compliance | 0 / 15 | 0 / 15 |
+| Partial Success | 10 / 15 | 15 / 15 |
+| Clear Hallucination | 0 / 15 | 0 / 15 |
+| Unnecessary Tool Usage | 15 / 15 | 15 / 15 |
+| Response Truncation (Token) | 4 / 15 | 0 / 15 |
+| System Crash | 1 / 15 | 0 / 15 |
+
+## Test Results Analysis
+
+### Detailed Test Examples
+
+#### Example 1: Ambiguous Help Request ("Help me")
+**Status**: Failed  
+**Expected**: 1-2 tool usage + clarification request  
+**Actual**: 4+ tool usage + assumptions
+
+**Agent Response**:
+"Binaural beats have been shown to be effective in reducing anxiety and improving focus. Research suggests that 10 Hz binaural beats can reduce anxiety by up to 26.3%, while gamma frequency binaural beats (40 Hz) may enhance cognitive performance. Beta frequency beats (15-20 Hz) can improve attention and concentration. Would you like to know more about how to use binaural beats for anxiety relief or cognitive enhancement?"
+
+**Critical Issues**:
+- Excessive tool usage (4+ tools)
+- Assumed user has anxiety
+- Offered treatment instead of asking for clarification
+
+#### Example 2: Comparison Question ("Alpha vs Theta Waves")
+**Status**: Failed  
+**Expected**: Academic research only  
+**Actual**: 2 tools + truncated response
+
+**Agent Response (Truncated)**:
+"Alpha and theta waves are two distinct brainwave frequencies with different effects on the brain. Alpha waves (8-12Hz) are associated with relaxed alertness, decreased cortical activity, and improved cognitive function. They're often used for anxiety reduction, stress relief, and enhancing focus. On the other hand, theta waves (4-8Hz) are linked to deep relaxation, increased creativit..."
+
+**Issues**:
+- Unnecessary user check for educational question
+- Response truncated (token limit)
+- Same rule violation
+
+### Successful Areas
+
+- **Hallucination Control**: The agent showed no clear hallucinations in any question
+- **System Stability**: Only 1 out of 15 questions experienced system crashes
+- **Partial Success Rate**: Achieved partial success in 10/15 questions
+
+### Areas Requiring Improvement
+
+- **Rule Compliance**: No question achieved full rule compliance
+- **Tool Usage**: Unnecessary tool usage observed in all questions
+- **Token Limit**: Response truncation issues in 4 questions
+
+### Recommendations
+
+- Strengthening rule-based behavior mechanisms
+- Optimizing tool selection algorithms
+- Improving token management and response length control
+- Enhancing error handling to increase system stability
+
+## Conclusion
+
+DAWOS Agent demonstrated moderate performance in benchmark tests. The main issue is that prompt quality needs improvement - when strict rules are defined, other scenarios get affected. While successful in hallucination control and basic functionality, significant prompt-based improvements are needed in rule compliance and tool selection.
 
 **Main Issues**:
 - System rules compliance not fully achieved
@@ -293,5 +383,6 @@ The DAWOS Agent project involves developing a comprehensive artificial intellige
 Testing with 7 different scenarios achieved a 71% partial success rate, but improvement needs were identified in system rule compliance, tool selection optimization, and token management areas. The project provided valuable experience in system prompt engineering, tool selection logic, and memory management in the AI agent development process.
 
 ---
+
 
 
