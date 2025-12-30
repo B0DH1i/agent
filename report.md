@@ -362,9 +362,10 @@ DAWOS Agent demonstrated moderate performance in benchmark tests. The main issue
 
 The DAWOS Agent project involves developing a comprehensive artificial intelligence system using the ReAct paradigm in the neurotherapy field. The system has capabilities for academic research, real-time emotion processing, session management, and user pattern analysis with 12 different tools. Academic information access is provided through a ChromaDB-based RAG system, and quality information presentation is achieved with smart chunking and citation systems.
 
-Testing with 7 different scenarios achieved a 71% partial success rate, but improvement needs were identified in system rule compliance, tool selection optimization, and token management areas. The project provided valuable experience in system prompt engineering, tool selection logic, and memory management in the AI agent development process.
+Testing with 15 different scenarios achieved partial success rate, but improvement needs were identified in system rule compliance, tool selection optimization, and token management areas. The project provided valuable experience in system prompt engineering, tool selection logic, and memory management in the AI agent development process.
 
 ---
+
 
 
 
